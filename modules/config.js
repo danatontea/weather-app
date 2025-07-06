@@ -11,6 +11,7 @@ const CONFIG = {
         UNITS: 'metric', // metric, imperial, kelvin
         LANG: 'ro'
     },
+     MAX_HISTORY_ITEMS: 10,
 
     // UI Configuration
     UI: {
@@ -73,7 +74,11 @@ const CONFIG = {
         WEATHER_LOADED: 'Datele meteorologice au fost încărcate.',
         SEARCH_SAVED: 'Căutarea a fost salvată în istoric.'
     },
-
+    LOGGING: {
+    ENABLED: true,
+    LEVEL: 'info', // 'debug', 'info', 'warn', 'error'
+    MAX_LOGS: 100,
+  },
     MOCK_DATA : // 
     {
         "coord": {

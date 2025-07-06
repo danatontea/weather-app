@@ -2,7 +2,7 @@
  * Weather App - Aplicația principală
  * Coordonează toate componentele și gestionează logica aplicației
  */
-
+import { logger } from './modules/logger.js'
 class WeatherApp {
     constructor() {
         this.weatherService = new WeatherService();
@@ -19,6 +19,7 @@ class WeatherApp {
      */
     async init() {
         try {
+             logger.info('Weather App starting...')
             // Load saved data
             this.loadRecentSearches();
             this.loadUserPreferences();
@@ -37,9 +38,11 @@ class WeatherApp {
             
             this.isInitialized = true;
             console.log('Weather App initialized successfully');
+           logger.info('Weather App initialized successfully')
             
         } catch (error) {
             console.error('Error initializing Weather App:', error);
+             logger.error('Failed to load weather from history', error)
             this.uiController.showError('Eroare la inițializarea aplicației.');
         }
     }
