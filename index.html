@@ -1,13 +1,87 @@
 <!DOCTYPE html>
 <html lang="ro">
-  <head>
-    <!-- Meta tags aici -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather App</title>
-    <!-- Link-uri către CSS și JS -->
-  </head>
-  <body>
-    <div id="app">
-      <!-- Structura ta aici -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🌤️ Weather App</h1>
+            <p>Află vremea din orice oraș de pe glob!</p>
+        </div>
+
+        <div class="search-container">
+            <form class="search-form" id="searchForm">
+                <input type="text" id="searchInput" class="search-input" placeholder="Introdu numele orașului...">
+                <button type="submit" class="btn btn-primary" id ="search-btn">Caută</button>
+                <button type="button" class="btn btn-secondary" id="locationBtn">📍 Locația mea</button>
+            </form>
+
+            <div class="recent-searches" id="recentSearches">
+                <h3>Căutări recente:</h3>
+                <div class="recent-items" id="recentItems"></div>
+            </div>
+        </div>
+
+        <div id="loading" class="loading hidden">
+            <div>🔄 Se încarcă datele meteorologice...</div>
+        </div>
+
+        <div id="error" class="error hidden"></div>
+
+        <div id="weatherCard" class="weather-card hidden">
+            <div class="weather-main">
+                <div class="location" id="location"></div>
+                <div class="weather-icon" id="weatherIcon"></div>
+                <div class="temperature" id="temperature"></div>
+                <div class="description" id="description"></div>
+                <div class="feels-like" id="feelsLike"></div>
+            </div>
+
+            <div class="weather-details">
+                <div class="details-grid">
+                    <div class="detail-item">
+                        <div class="icon">💧</div>
+                        <h4>Umiditate</h4>
+                        <div class="value" id="humidity"></div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="icon">🌡️</div>
+                        <h4>Presiune</h4>
+                        <div class="value" id="pressure"></div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="icon">💨</div>
+                        <h4>Vânt</h4>
+                        <div class="value" id="windSpeed"></div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="icon">👁️</div>
+                        <h4>Vizibilitate</h4>
+                        <div class="value" id="visibility"></div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="icon">🌅</div>
+                        <h4>Răsărit</h4>
+                        <div class="value" id="sunrise"></div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="icon">🌇</div>
+                        <h4>Apus</h4>
+                        <div class="value" id="sunset"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-  </body>
+
+    <!-- Module imports -->
+    <script src="modules/config.js"></script>
+    <script src="modules/weather-service.js"></script>
+    <script src="modules/ui-controller.js"></script>
+    <script src="app.js"></script>
+</body>
 </html>
