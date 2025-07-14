@@ -145,6 +145,25 @@ FORECAST: {
     HOURS: 24
 }
 ```
+4. **Design Patterns**:
+
+- **Modular Architecture** - Separarea responsabilităților
+- **Service Layer** - Abstracție pentru API-uri externe
+- **Observer Pattern** - Event-driven updates
+- **Singleton Pattern** - Instanțe unice pentru servicii
+
+5. ** Tools & Workflow**:
+
+- **Git/GitHub** - Control versiuni și colaborare
+- **VS Code** - Environment de dezvoltare
+- **GitHub Pages** - Hosting gratuit
+
+6. **APIs & Services**:
+
+- **OpenWeatherMap API** - Date meteo în timp real
+- **Geolocation API** - Detectarea automată a locației
+- **IP Geolocation API** - Fallback pentru locație
+
 
 ### Testarea aplicației
 

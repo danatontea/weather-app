@@ -299,6 +299,7 @@ export class Logger {
 export const logger = new Logger();
 
 // Expune logger-ul global pentru debugging rapid
+if (typeof window !== 'undefined') {
 window.logs = {
   // Afișează toate log-urile
   show: () => logger.show(),
@@ -330,6 +331,7 @@ window.logs = {
   warn: (msg, data) => logger.warn(msg, data),
   error: (msg, error) => logger.error(msg, error)
 };
+}
 
 // Mesaj de inițializare
 logger.info('Logger service is ready! Use window.logs for quick access.');
